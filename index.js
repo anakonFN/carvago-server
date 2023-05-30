@@ -11,7 +11,7 @@ const port = process.env.PROXY_PORT || 5000
 app.get('/*', (req, res) => {
   const backendUrl = `https://api.carvago.com${req.originalUrl}`
 
-  axios.get(backendUrl).then(response => res.send(response.data))
+  axios.get(backendUrl).then((response,) => res.send(response.data)).catch(()=>{})
 })
 
 app.listen(port, () => {
